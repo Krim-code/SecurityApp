@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Редактировать объект{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl mb-4">Создать объект</h1>
+<form method="post" class="space-y-4">
+    {% csrf_token %}
+    <div>
+        <label for="{{ form.name.id_for_label }}" class="block">Название объекта</label>
+        {{ form.name }}
+        {{ form.name.errors }}
+    </div>
+    <div>
+        <label for="{{ form.category.id_for_label }}" class="block">Категория ПДН</label>
+        {{ form.category }}
+        {{ form.category.errors }}
+    </div>
+    <div>
+        <label for="{{ form.number_of_people.id_for_label }}" class="block">Количество людей</label>
+        {{ form.number_of_people }}
+        {{ form.number_of_people.errors }}
+    </div>
+    <div>
+        <label for="{{ form.threat_type.id_for_label }}" class="block">Тип угроз</label>
+        {{ form.threat_type }}
+        {{ form.threat_type.errors }}
+    </div>
+    <button type="submit" class="w-full p-2 bg-blue-600 text-gray-200 rounded">Сохранить</button>
+</form>
+<a href="{% url 'index' %}" class="block mt-4 p-2 bg-gray-600 text-gray-200 rounded">Назад к списку объектов</a>
+{% endblock %}
