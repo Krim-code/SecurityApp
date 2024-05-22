@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ### Перейдите в директорию с файлом manage.py:
 ```
-cd project_name
+cd security_project
 ```
 
 ### Выполните миграции для создания базы данных:
